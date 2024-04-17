@@ -1,0 +1,154 @@
+    /* src/features/home/HomePage.css */
+
+    html, body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern, easy-to-read typography */
+    }
+    
+    body {
+        background: url('./image/bk2.jpg') no-repeat center center fixed;
+        background-size: cover; /* Full screen background image */
+        color: #333; /* Soft, professional text color */
+    }
+    
+    a {
+        text-decoration: none;
+        color: inherit; /* Prevent default link colors */
+    }
+    
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    /* Navigation bar styling */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black for a sleek look */
+    color: white;
+    position: fixed; /* Fixed at the top */
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: center; /* Center navigation items horizontally */
+    align-items: center;
+    padding: 10px 0;
+}
+
+.navbar li {
+    margin: 0 15px; /* Uniform spacing between links */
+}
+
+.navbar a {
+    font-weight: bold;
+    color: white;
+    padding: 10px; /* Easier to click */
+}
+
+.navbar a:hover {
+    color: #1DA1F2; /* Twitter-like blue for interactivity */
+}
+/* Hero section styling */
+.hero {
+    padding: 120px 20px; /* More padding for a dramatic effect */
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent layer over background */
+    text-align: center;
+    margin-top: 60px; /* Push down to make space for navbar */
+}
+
+.hero h1 {
+    font-size: 48px; /* Larger text for impact */
+    color: #333;
+}
+
+.hero p {
+    font-size: 18px; /* Larger paragraph text */
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.hero button {
+    font-size: 16px;
+    background-color: #1DA1F2; /* Attractive button color */
+    border: none;
+    padding: 12px 24px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #117dbb; /* Darker shade on hover */
+}
+/* Features and tiles section */
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center children horizontally */
+    align-items: flex-start; /* Align children to the top of the container */
+    gap: 20px; /* Consistent space between items */
+}
+@media (max-width: 768px) {
+    .feature-item {
+      flex: 0 1 100%; /* Stack the items on smaller screens */
+    }
+  }
+
+.feature-item {
+    flex: 0 1 calc(33.333% - 40px); /* Adjust the calculation based on the gap size */
+    /* Other styles */
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); 
+}
+
+.feature-item img {
+    max-width: 100%; /* Ensure the image is responsive and fits within the container */
+    height: auto;
+}
+
+
+.tile-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.tile:hover {
+    transform: translateY(-5px); /* Subtle lifting effect */
+}
+
+
+    .tile {
+        background: white; /* Background for tiles */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+ 
+    /* Footer styling */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;}
+
+
+    @keyframes slideRight {
+        0% { opacity: 0; transform: translateX(100%); }
+        100% { opacity: 1; transform: translateX(0); }
+    }
+
+    .hero, .features, .about, .contact {
+        animation: slideRight 2s ease-out;
+    }
